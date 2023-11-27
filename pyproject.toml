@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "odoo_xmlrpc"
+version = "1.0.2"
+authors = [
+  { name = "IT-DW GmbH", email = "support@it-dw.com" }
+]
+description = "A Python module to interact with Odoo XML-RPC API"
+readme = "README.md"  # If you have a README file
+keywords = ["odoo", "xml-rpc", "api"]
+license = "GPLv3"
+urls = {
+  "Homepage" = "https://github.com/itdwgmbh/odoo-xmlrpc-python"
+  # You can add other URLs like Documentation, Repository, etc.
+}
+classifiers = [
+  # Add your PyPI classifiers here
+]

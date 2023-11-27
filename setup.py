@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='odoo_xmlrpc',
-    version='1.0.2',
+    version='1.0.3',
     packages=find_packages(),
     include_package_data=True,
     install_requires=[],
@@ -11,5 +11,7 @@ setup(
     description='A Python module to interact with Odoo XML-RPC API',
     keywords='odoo xml-rpc api',
     url='https://github.com/itdwgmbh/odoo-xmlrpc-python',
-    license='GPLv3'
+    license='GPLv3',
+    py_modules=["api"],
+
 )
