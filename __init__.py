@@ -1,1 +1,1 @@
-# IT-DW GmbH
+from .api import OdooAPI
