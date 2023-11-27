@@ -31,6 +31,7 @@ class OdooAPI:
         This method sets the user ID (uid) if authentication is successful. It raises an exception
         if authentication fails or encounters an unexpected error.
         """
+        
         if self.uid is not None:
             return 
         try:
@@ -143,7 +144,7 @@ class OdooAPI:
 
         Raises an exception if the delete operation fails.
         """
-        
+
         try:
             self.execute_kw(model, 'unlink', [[record_id]])
         except xmlrpc.client.Fault as e:
