@@ -31,11 +31,15 @@ class OdooAPI:
         This method sets the user ID (uid) if authentication is successful. It raises an exception
         if authentication fails or encounters an unexpected error.
         """
-        
+
         if self.uid is not None:
-            return 
+            return
         try:
             self.uid = self.common_proxy.authenticate(self.db_name, self.username, self.password, {})
+            self.logger.info("Successfully authenticated.")
+        except xmlrpc.client.ProtocolError as e:
+            self.logger.error(f"Protocol error during authentication: {e}")
+            raise
         except xmlrpc.client.Fault as e:
             self.logger.error(f"Authentication failed: {e.faultString}")
             raise
@@ -57,12 +61,15 @@ class OdooAPI:
 
         Raises an exception if the Odoo API call fails.
         """
+        
         if not self.uid:
             self.authenticate()
         try:
-            return self.models_proxy.execute_kw(self.db_name, self.uid, self.password, model, method, args)
+            result = self.models_proxy.execute_kw(self.db_name, self.uid, self.password, model, method, args)
+            self.logger.info(f"Successfully executed method '{method}' on model '{model}'.")
+            return result
         except xmlrpc.client.Fault as e:
-            self.logger.error(f"Odoo API call failed: {e.faultString}")
+            self.logger.error(f"Odoo API call for method '{method}' on model '{model}' failed: {e.faultString}")
             raise
 
     def create_record(self, model, values):
