@@ -9,9 +9,8 @@ authors = [
   { name = "IT-DW GmbH", email = "support@it-dw.com" }
 ]
 description = "A Python module to interact with Odoo XML-RPC API"
-readme = "README.md"  # If you have a README file
+readme = "README.md"
 keywords = ["odoo", "xml-rpc", "api"]
 license = "GPLv3"
-urls = {
-  "Homepage" = "https://github.com/itdwgmbh/odoo-xmlrpc-python"
-}
+[project.urls]
+Homepage = "https://github.com/itdwgmbh/odoo-xmlrpc-python"
