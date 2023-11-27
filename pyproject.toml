@@ -14,8 +14,4 @@ keywords = ["odoo", "xml-rpc", "api"]
 license = "GPLv3"
 urls = {
   "Homepage" = "https://github.com/itdwgmbh/odoo-xmlrpc-python"
-  # You can add other URLs like Documentation, Repository, etc.
 }
-classifiers = [
-  # Add your PyPI classifiers here
-]
