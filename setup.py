@@ -5,9 +5,7 @@ setup(
     version='1.0.0',
     packages=find_packages(),
     include_package_data=True,
-    install_requires=[
-        'xmlrpc'
-    ],
+    install_requires=[],
     author='IT-DW GmbH',
     author_email='support@it-dw.com',
     description='A Python module to interact with Odoo XML-RPC API',
